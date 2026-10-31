@@ -9,6 +9,7 @@
 | [product-benchmark-tasks](skills/product-benchmark-tasks/SKILL.md) | 分析对标产品，把观察结果转成可验证的执行任务。 |
 | [attention-driven-storyboard](skills/attention-driven-storyboard/SKILL.md) | 围绕观众注意力和内容推进，策划知识短视频及其分镜。 |
 | [knowledge-video-storyboard](skills/knowledge-video-storyboard/SKILL.md) | 把已剪辑口播或逐字稿转换成知识分享视频分镜。 |
+| [broll-selection](skills/broll-selection/SKILL.md) | 按口播台词决定要不要切空镜、选哪类画面、怎么筛片并输出镜头清单。 |
 
 ## 结构
 
