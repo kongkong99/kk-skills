@@ -7,7 +7,7 @@ description: 根据任务内容生成模拟 WorkBuddy 正在运行的可编辑�
 
 用用户提供的任务内容制作 WorkBuddy 风格的动态教程画面。默认直接制作可播放、可修改的本地 HTML；用户希望视频、成片或没有指定形式但明显用于视频教程时，同时生成 MP4。用户仅提供任务描述时，合理推导标题、步骤和展示内容，不必追问；按用途选横版，用户指定尺寸、时长或细节时遵从。
 
-用户需要突出展示或逐字输入 prompt 时，可使用独立的 [WorkBuddy 提示词窗口模板](assets/workbuddy-prompt.html)：参考 Jeff 视频的深色圆角大卡片、上方绿色 WorkBuddy 标识、分段文字与发送按钮，而非把它当作真实软件截图。此系列按用户要求使用绿色标识，不要改成紫色。修改其中 `prompt-config` JSON 的 `prompt`、`duration`、`typingStart`、`typingEnd`；对中文和换行按时间逐字显示，预留阅读停留。长文拆页或调整文字与布局，禁止让文字被裁切。模板支持预览、暂停、拖动进度，也实现 `window.setSimulationTime(seconds)` 和 `window.SIMULATION_DURATION`，可用现有渲染脚本生成无声视频；如成片需要打字、点击或镜头音效，在编辑器中另加并混音。保留明显的「模拟演示」标记，发送按钮仅为演示。Jeff 风格的音效和编排可配合 interface-explainer-motion skill。
+用户需要突出展示或逐字输入 prompt 时，可使用独立的 [WorkBuddy 提示词窗口模板](assets/workbuddy-prompt.html)：参考 Jeff 视频的深色圆角大卡片、上方绿色 WorkBuddy 标识、分段文字与发送按钮，而非把它当作真实软件截图。此系列按用户要求使用绿色标识和两倍放大的文字（1080 像素宽画面默认约 84px），不要改成紫色或无故缩回小字。修改其中 `prompt-config` JSON 的 `prompt`、`duration`、`typingStart`、`typingEnd`；对中文和换行按时间逐字显示，预留阅读停留。在最终导出尺寸检查文字完整且不遮挡发送按钮；长文拆页或调整卡片，禁止让文字被裁切。模板支持预览、暂停、拖动进度，也实现 `window.setSimulationTime(seconds)` 和 `window.SIMULATION_DURATION`，可用现有渲染脚本生成无声视频；如成片需要打字、点击或镜头音效，在编辑器中另加并混音。保留明显的「模拟演示」标记，发送按钮仅为演示。Jeff 风格的音效和编排可配合 interface-explainer-motion skill。
 
 ## 工作流
 
