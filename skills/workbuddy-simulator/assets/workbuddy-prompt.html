@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkBuddy 提示词演示</title>
+<style>
+  *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080909}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;color:#f8f8f8}
+  .stage{position:relative;width:100%;height:100%;overflow:hidden;background-color:#080909;background-image:radial-gradient(circle,#626565 0 2px,transparent 3px),radial-gradient(circle,#474b4a 0 1.7px,transparent 3px);background-size:31% 18%,37% 24%;background-position:8% 5%,23% 12%}
+  .label{position:absolute;top:2.4%;right:4%;color:#bfc2c0;font-size:clamp(12px,2vw,20px);letter-spacing:.08em}
+  .content{position:absolute;left:50%;top:50%;width:min(82%,820px);height:min(78%,1230px);transform:translate(-50%,-50%);display:flex;align-items:center;flex-direction:column;justify-content:center;gap:min(3.5vh,60px)}
+  .brand{width:clamp(54px,11vw,126px);height:clamp(54px,11vw,126px);border-radius:50%;box-shadow:0 0 30px #000;flex:none}
+  .card{position:relative;width:100%;height:min(57vh,910px);min-height:160px;background:#111212;border:clamp(8px,2vw,24px) solid #171818;outline:2px solid #777;border-radius:clamp(24px,5vw,70px);box-shadow:0 10px 40px #000;overflow:hidden}
+  .text{position:absolute;left:8%;right:8%;top:9%;bottom:17%;white-space:pre-wrap;overflow:hidden;overflow-wrap:anywhere;line-height:1.38;font-size:clamp(18px,3.9vw,42px);font-weight:500;letter-spacing:.005em}
+  .cursor{display:inline-block;width:2px;height:1em;vertical-align:-.1em;background:#f6f6f6;margin-left:2px}
+  .send{position:absolute;right:6%;bottom:5%;width:clamp(32px,6.2vw,68px);aspect-ratio:1;border-radius:25%;display:grid;place-items:center;background:#f5f5f5;color:#111}
+  .send svg{width:60%;height:60%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .controls{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;color:#ddd;font-size:13px}
+  .controls button{background:#333;color:white;border:0;border-radius:5px;padding:7px 10px}.controls input{width:24vw}
+  body.clean .controls{display:none}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="label">模拟演示</div>
+  <div class="content">
+    <img class="brand" alt="WorkBuddy" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEyIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXApIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSIxMiIgZmlsbD0iIzRDNEY2QiIvPjxwYXRoIGQ9Ik0zLjQ2ODkgMTEuMDE0NEMzLjMyMzQ0IDExLjIwMjUgMy4zMTYwNyAxMS40NTY3IDMuNDM0NSAxMi4wMjk4QzMuNjU4ODMgMTMuMDc0OCA0LjI0MDI5IDE0LjQ0MjYgNS4xNTU3OSAxNi4wNzE2TDUuNzQ3IDE3LjExNzJMNS43Mjg2MiAxNy41MTFDNS43MDU0NCAxNy45MzI2IDUuNzI4NDggMTguNTg1NyA1Ljc3OTIxIDE5LjAyNzFDNS44MDk5NCAxOS4yOTY3IDUuODA1NSAxOS4zMDM1IDUuNjY0ODMgMTkuNDYzOEM1LjEyMDQyIDIwLjA4NjQgNS4wMzkxNiAyMS4xMjg3IDUuNDQ3ODcgMjIuMjgzOUM1LjYyNDU2IDIyLjc3NzUgNi4xNjk1OCAyMy42OTk5IDYuNTA3MjYgMjQuMDc1NkM3LjM1MzkyIDI1LjAxNTQgOC4zNTA1MSAyNS40NjQ2IDkuMTExNDcgMjUuMjQ2QzkuMjU0NDYgMjUuMjA1MSA5LjI4NDAzIDI1LjIxMyA5LjQ3MTE3IDI1LjM0MjRDMTAuMTgyIDI1LjgyMzMgMTEuMzgzNCAyNi4yMzc3IDEyLjQ0NDcgMjYuMzY2M0MxNC4yMjQyIDI2LjU4NDMgMTYuMjcyNyAyNi4xNDMgMTguODI4MSAyNC45OTI1QzE5Ljg5NDggMjQuNTA5OSAyMi4yNTQxIDIzLjEzNTIgMjMuMjUxMyAyMi40MDk2QzI1LjEwODMgMjEuMDY2NyAyNi40ODA1IDE5LjY0MTQgMjcuMjUxIDE4LjI2MzVDMjcuOTMzNyAxNy4wMzY0IDI4LjI3MzUgMTUuNzc4MSAyOC4yNDk1IDE0LjUxNzRDMjguMjQ2NiAxNC4yNTI1IDI4LjI1MzYgMTQuMjM1OSAyOC4zNTk5IDE0LjE3NDZDMjguODc5NyAxMy44NzAzIDI5LjE0OTcgMTMuMTk4IDI5LjA5MjcgMTIuMzU2MkMyOS4wNzUgMTIuMTE2NSAyOS4wMjY2IDExLjc5NDYgMjguOTkwMiAxMS42NDQ4QzI4Ljc0MDQgMTAuNzE0NCAyOC4wODg1IDkuNTk5NzEgMjcuNDA3OCA4Ljk0NzI5QzI2LjY1MTUgOC4yMjE4MiAyNS43OTQzIDcuOTEyOSAyNS4xOTU4IDguMTQ1OThDMjUuMDYzMSA4LjE5NzU4IDI1LjA0NTIgOC4xOTU0MiAyNC45MTc3IDguMDg5OTVDMjQuNjM1NyA3Ljg2MTI0IDIzLjk2MDQgNy40MzQ3MyAyMy41NDg4IDcuMjI2NzNMMjMuMTIyNCA3LjAxNDc3TDIyLjgyMDYgNi40NTU5NUMyMi4wMzkyIDUuMDE2MDkgMjAuNzgyNiAzLjMzMDAzIDE5Ljg4MDEgMi41MDk5MkMxOS40OTM3IDIuMTU4MTggMTkuMjY2OCAyLjAzOTI5IDE5LjAxOSAyLjA1NzM5QzE4Ljg2NiAyLjA2NjU3IDE4Ljg1MzUgMi4wNzM3OSAxOC42NDUgMi4yNjA4NEMxOC4wMzg5IDIuNzk4MTkgMTcuMTg4OSA0LjQxMzU1IDE2LjM1ODggNi42MDQ2M0wxNi4xMjcxIDcuMjEzMjVMMTUuNzA1MyA3LjM0ODQ1QzE0LjM5MDkgNy43Njk5NSAxMy4yMjM4IDguMzAyMTkgMTIuMTg5NiA4Ljk0OTI4QzExLjE5NzMgOS41Njc5OSAxMC42NTkxIDkuOTcwMzcgOS44NDg4NiAxMC42ODhMOS4zNjA4NyAxMS4xMTk3TDkuMTM4NzggMTEuMDgxM0M3LjAwMDcyIDEwLjcwMzkgNS4wNzg5MiAxMC41NjM5IDQuMTk3NzYgMTAuNzE4NkMzLjg0NzcyIDEwLjc4MzIgMy41NTc0MyAxMC45MDA4IDMuNDY4OSAxMS4wMTQ0WiIgZmlsbD0iI0QyRDNFMCIvPjxyZWN0IHg9IjYuNjg1NTUiIHk9IjE2LjM3ODgiIHdpZHRoPSIxNy43OTE4IiBoZWlnaHQ9IjExLjU2MDUiIHJ4PSI0LjYxNDY5IiB0cmFuc2Zvcm09InJvdGF0ZSgtMzAgNi42ODU1NSAxNi4zNzg4KSIgZmlsbD0iIzIxMjIzNCIvPjxyZWN0IHg9IjEyLjIxMTkiIHk9IjE3LjI1OTMiIHdpZHRoPSIyLjEzMTczIiBoZWlnaHQ9IjQuNDI3NDQiIHJ4PSIxLjA2NTg3IiB0cmFuc2Zvcm09InJvdGF0ZSgtMzAgMTIuMjExOSAxNy4yNTkzKSIgZmlsbD0iI0QyRDNFMCIvPjxyZWN0IHg9IjE3Ljk2MzQiIHk9IjEzLjkzODciIHdpZHRoPSIyLjEzMTczIiBoZWlnaHQ9IjQuNDI3NDQiIHJ4PSIxLjA2NTg3IiB0cmFuc2Zvcm09InJvdGF0ZSgtMzAgMTcuOTYzNCAxMy45Mzg3KSIgZmlsbD0iI0QyRDNFMCIvPjwvZz48L3N2Zz4=">
+    <div class="card"><div class="text"><span id="prompt"></span><span class="cursor" id="cursor"></span></div><div class="send" aria-label="发送示意"><svg viewBox="0 0 32 32"><path d="M16 25V7M7 16l9-9 9 9"/></svg></div></div>
+  </div>
+  <div class="controls"><button id="toggle">暂停</button><input id="slider" type="range" min="0" step="0.01"><span id="time"></span></div>
+</div>
+<script id="prompt-config" type="application/json">
+{
+  "prompt": "请帮我整理这份会议记录，\n提取关键决定和待办事项，\n并按负责人和截止时间列成表格。",
+  "duration": 7,
+  "typingStart": 0.8,
+  "typingEnd": 5.2
+}
+</script>
+<script>
+(() => {
+  const config=JSON.parse(document.getElementById('prompt-config').textContent);
+  const duration=Number(config.duration)>0?Number(config.duration):7;
+  const start=Math.max(0,Number(config.typingStart)||0);
+  const end=Math.max(start+.01,Number(config.typingEnd)||duration-1);
+  const text=String(config.prompt||'');
+  const chars=typeof Intl.Segmenter==='function'?Array.from(new Intl.Segmenter('zh',{granularity:'grapheme'}).segment(text),x=>x.segment):Array.from(text);
+  const output=document.getElementById('prompt'),cursor=document.getElementById('cursor'),slider=document.getElementById('slider'),time=document.getElementById('time'),toggle=document.getElementById('toggle');
+  let position=0,playing=true,last=performance.now();
+  slider.max=String(duration);
+  if(new URLSearchParams(location.search).has('clean')){document.body.classList.add('clean');playing=false}
+  function render(){
+    const progress=Math.max(0,Math.min(1,(position-start)/(end-start)));
+    output.textContent=chars.slice(0,Math.floor(progress*chars.length)).join('');
+    cursor.style.visibility=position>=end||Math.floor(position*2)%2===0?'visible':'hidden';
+    slider.value=String(position);time.textContent=position.toFixed(1)+' / '+duration.toFixed(1)+' 秒';
+    toggle.textContent=playing?'暂停':'播放';
+  }
+  window.SIMULATION_DURATION=duration;
+  window.setSimulationTime=value=>{position=Math.max(0,Math.min(duration,Number(value)||0));render()};
+  window.WorkBuddyPrompt={seek:window.setSimulationTime,play(){playing=true;last=performance.now()},pause(){playing=false;render()},get duration(){return duration}};
+  toggle.onclick=()=>{playing=!playing;if(playing&&position>=duration)position=0;last=performance.now();render()};
+  slider.oninput=()=>{playing=false;window.setSimulationTime(slider.value)};
+  function tick(now){if(playing){position=Math.min(duration,position+(now-last)/1000);if(position>=duration)playing=false;render()}last=now;requestAnimationFrame(tick)}
+  render();requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

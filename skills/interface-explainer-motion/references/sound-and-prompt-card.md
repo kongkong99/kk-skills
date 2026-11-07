@@ -1,0 +1,13 @@
+# Jeff-style sound cues and prompt card
+
+## Sound design for visual actions
+
+The user wants audible, subtle UI cues in Jeff-style software tutorials: a click on each visible mouse click, a short movement sound for each push-in or zoom, and typing sounds during visible typing. Make a cue sheet from the actual timeline, then place effects on separate editable audio tracks. Synchronize a click's transient with the moment the pointer presses; let a short whoosh start with the camera move and end as it settles. Synchronize keystrokes with visible text entry, stop during pauses and avoid a distracting continuous loop. Chinese text entry and pasted text may not map one sound per displayed character; use a natural cadence that follows what is visibly happening.
+
+Starter files [mouse-click](../assets/sfx/mouse-click.wav), [keyboard-tap](../assets/sfx/keyboard-tap.wav) and [zoom-whoosh](../assets/sfx/zoom-whoosh.wav) are original synthetic sounds, not extracted Jeff audio and not verified matches to the creator's sound library. Replace or adjust their tone, length and volume when the reference, user or material warrants it. `python3 scripts/make_sfx.py` regenerates them. Balance below narration, trim or vary repeated taps, apply short fades when needed, and keep headroom to prevent clipping. Do not mute the narration or add effects solely to create activity. The effects must be present in the final mix, not only described in a storyboard; review with audio and confirm synchronization.
+
+## Standalone prompt window
+
+The user-provided reference frame comes from [Google’s advice for jobseekers](https://www.youtube.com/shorts/UBZIe0RQnaE), around 17–35 seconds. It is a different video from the Claude Cowork reference: a near-black dotted background, round product mark above a large dark rounded and outlined card, white left-aligned prompt in paragraphs, and a small light send-arrow button at bottom right. The card shows text appearing over time; it is a designed illustration rather than verified software capture. Do not transfer this source's unrelated captions to the Claude Cowork style by default.
+
+For WorkBuddy use the workbuddy-simulator's `assets/workbuddy-prompt.html` as an editable starting point. Replace the sample prompt with the user's actual script and time its reveal to narration. Use an adequately large font and a hold after typing; divide lengthy prompts into multiple states or cards instead of silently cropping text. Mark the screen as a simulation and do not suggest the illustrated send button really operated WorkBuddy. Render with the simulator's renderer or an editor, then add and synchronize the keyboard/click/movement sounds in the audio mix. The HTML renderer alone outputs silent video.
