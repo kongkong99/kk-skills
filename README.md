@@ -9,7 +9,8 @@
 | [product-benchmark-tasks](skills/product-benchmark-tasks/SKILL.md) | 分析对标产品，把观察结果转成可验证的执行任务。 |
 | [attention-driven-storyboard](skills/attention-driven-storyboard/SKILL.md) | 围绕观众注意力和内容推进，策划知识短视频及其分镜。 |
 | [knowledge-video-storyboard](skills/knowledge-video-storyboard/SKILL.md) | 把已剪辑口播或逐字稿转换成知识分享视频分镜。 |
-| [x-article-layout](skills/x-article-layout/SKILL.md) | 将长文整理为分节图文排版，标注加粗、生成配图提示词并插入 AI 配图。 |
+| [x-article-layout](skills/x-article-layout/SKILL.md) | 将长文整理为分节图文排版，标注加粗，并默认用黑白蚀刻版画风为每节生成隐喻配图。 |
+| [dankoe-style-images](skills/dankoe-style-images/SKILL.md) | 按 Dan Koe 式黑白蚀刻版画风给长文封面与正文配图，含隐喻选择、提示词模板和自检。 |
 
 ## 结构
 
