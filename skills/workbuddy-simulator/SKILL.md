@@ -9,7 +9,7 @@ description: 根据任务内容生成模拟 WorkBuddy 正在运行的可编辑�
 
 用户需要突出展示或逐字输入 prompt 时，可使用独立的 [WorkBuddy 提示词窗口模板](assets/workbuddy-prompt.html)：参考 Jeff 视频的深色圆角大卡片、上方绿色 WorkBuddy 标识、分段文字与发送按钮，而非把它当作真实软件截图。此系列按用户要求使用绿色标识和两倍放大的文字（1080 像素宽画面默认约 84px），不要改成紫色或无故缩回小字。修改其中 `prompt-config` JSON 的 `prompt`、`duration`、`typingStart`、`typingEnd`；对中文和换行按时间逐字显示，预留阅读停留。在最终导出尺寸检查文字完整且不遮挡发送按钮；长文拆页或调整卡片，禁止让文字被裁切。模板支持预览、暂停、拖动进度，也实现 `window.setSimulationTime(seconds)` 和 `window.SIMULATION_DURATION`，可用现有渲染脚本生成无声视频；如成片需要打字、点击或镜头音效，在编辑器中另加并混音。保留明显的「模拟演示」标记，发送按钮仅为演示。Jeff 风格的音效和编排可配合 interface-explainer-motion skill。
 
-展示图片产物时可使用 [图片展示过渡模板](assets/workbuddy-image-reveal.html)：先在模拟界面看到较小缩略图，再点击、压暗背景并将图片平滑放大，短暂停留后回到界面。用户要求短视频节奏快，此动作默认全程约两秒；根据口播同步，但不要无故拉长。深色背景沿用稀疏白色星点，不使用纯黑背景。修改 `image-reveal-config` 中的 `imageSrc`（本地相对路径或 data URI）、`duration`、`clickAt`、`zoomAt`、`zoomDuration`、`returnAt`、`returnDuration`；输入框文字等可编辑 HTML。模板自带海报只是示意，不代表真实生成结果；有用户实际产物时替换，始终保留比例和「模拟演示」标记。支持 `window.setSimulationTime(seconds)` 与原渲染器；渲染器无声，按画面另加点击和放大音效，播放成片检查同步及裁切。需要真实操作时优先使用用户录屏，不能把模拟点击说成真实执行。
+展示图片产物时可使用 [图片展示过渡模板](assets/workbuddy-image-reveal.html)：先在模拟界面看到较小、轻微模糊的缩略图，再点击、压暗背景并将图片平滑放大，同时逐渐去除模糊；清晰展示结果，短暂停留后回到已揭晓的清晰缩略图。用户要求短视频节奏快，此动作默认全程约两秒；根据口播同步，但不要无故拉长。深色背景沿用稀疏白色星点，不使用纯黑背景。修改 `image-reveal-config` 中的 `imageSrc`（本地相对路径或 data URI）、`duration`、`clickAt`、`zoomAt`、`zoomDuration`、`returnAt`、`returnDuration`；输入框文字等可编辑 HTML。模板自带海报只是示意，不代表真实生成结果；有用户实际产物时替换，始终保留比例和「模拟演示」标记。支持 `window.setSimulationTime(seconds)` 与原渲染器；渲染器无声，按画面另加点击和放大音效，播放成片检查同步及裁切。需要真实操作时优先使用用户录屏，不能把模拟点击说成真实执行。
 
 ## 工作流
 
