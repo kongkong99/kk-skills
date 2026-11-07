@@ -37,6 +37,8 @@ For Jeff-style software teaching, plan and add synchronized sound effects as par
 
 When a tutorial shows an image or visual result, plan a legible reveal rather than leaving the result small inside the interface. For Jeff reference evidence and the user's requested click-to-enlarge transition, read [image reveal](references/image-reveal.md). The WorkBuddy simulator provides an editable example when available. Use the user's actual output when supplied; an illustrative image or simulated interaction must be labeled as such.
 
+For this user's short-form tutorials, keep visual beats and transitions brisk and tied to the narration; avoid long static holds or repeated setup. The requested image click-and-reveal takes about two seconds end to end. For dark graphic backgrounds in this series, use the previously approved sparse white-star/dot texture rather than a flat black fill. Preserve enough readability for the actual content, changing the presentation when needed instead of automatically extending the transition.
+
 ## Execute the requested deliverable
 
 For a storyboard, give enough detail to produce each beat. For an editable animation or finished video, carry the plan through using the available host's editing, screen, caption, motion-graphic and export tools; follow their applicable instructions. Discover and use an available product-specific workflow when the task concerns a supported product or simulator. Do not stop at a plan when the user requested production. Preserve original source files while editing and arranging copies or timeline occurrences within the requested scope. Keep presenter, interface, graphics and captions separately editable where the host permits. Parameterize reusable text, colors, media, layout, and cues when practical.
