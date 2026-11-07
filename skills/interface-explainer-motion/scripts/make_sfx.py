@@ -26,7 +26,6 @@ def click(seed, duration, body, freq):
     return result
 
 write('mouse-click.wav', click(11, .12, .18, 1250))
-write('keyboard-tap.wav', click(31, .085, .11, 730))
 rng = random.Random(83)
 state = 0.0
 whoosh = []
@@ -36,4 +35,4 @@ for i in range(int(.38 * RATE)):
     envelope = math.sin(math.pi * t / .38) ** 1.5
     whoosh.append(.55 * state * envelope)
 write('zoom-whoosh.wav', whoosh)
-print('Generated mouse-click.wav, keyboard-tap.wav, zoom-whoosh.wav in', OUT)
+print('Generated mouse-click.wav and zoom-whoosh.wav in', OUT)
