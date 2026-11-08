@@ -1,6 +1,6 @@
 # Jeff Su — Claude Cowork setup visual reference
 
-Use this reference when asked to match Jeff Su's style, unless the user identifies a different reference. Source: [Claude Cowork setup: the only 2 files you need](https://www.youtube.com/shorts/oBINTHha8Wc). Inspect the available actual video: visual facts below are observations of that one video, not universal Jeff Su rules. The starting values are approximate from sampled 1080×1920 frames; adapt to the source footage and compare visually, not as claims of the original editing parameters.
+Use this reference when the user specifically asks to match this Claude Cowork setup video. Source: [Claude Cowork setup: the only 2 files you need](https://www.youtube.com/shorts/oBINTHha8Wc). Inspect the available actual video: visual facts below are observations of that one video, not universal Jeff Su rules. The starting values are approximate from sampled 1080×1920 frames; adapt to the source footage and compare visually, not as claims of the original editing parameters. The user's current WorkBuddy personal-brand series takes precedence: person-led opening for the first two seconds and varied colorful, differently sized emphasis.
 
 ## Opening state: split presenter and interface
 
@@ -8,7 +8,7 @@ In the first roughly five seconds, a large interface close-up fills the top of t
 
 Center a concise two-line headline around the seam, roughly y=0.40–0.46 of frame height: heavy white sans-serif on the first line, warm saturated yellow on the second; use a subtle dark shadow/gradient for contrast, with small white cross marks on either side if they fit. For Chinese write two short natural lines derived from the spoken topic; preserve the white/yellow visual hierarchy. Do not use a permanent top navigation band in place of this title.
 
-Place the speech caption beneath the headline near y=0.49–0.52, horizontally centered. The reference uses short phrases in dark regular-weight type on a compact light-grey rounded rectangle, with its width following the phrase, not a full-width banner. At 1080×1920, roughly 38–48 px Chinese-capable font size and 12–18 px horizontal padding are starting estimates; keep it legible and adjust to actual visual match. Avoid large white bold text with black outlines. Match phrase boundaries to the user's actual speech, not to an invented script; display any necessary simulation label without covering title or caption.
+Place the speech caption beneath the headline near y=0.49–0.52, horizontally centered. This reference uses short phrases in dark regular-weight type on a compact light-grey rounded rectangle, with its width following the phrase, not a full-width banner. At 1080×1920, roughly 38–48 px Chinese-capable font size and 12–18 px horizontal padding are starting estimates for this specific reference; keep it legible and adjust to actual visual match. Other Jeff videos use colorful, bold and outlined type; do not treat this gray-chip caption as a universal rule. Match phrase boundaries to the user's actual speech, not to an invented script. Respect an explicit request to omit the simulation badge, and disclose simulations in delivery.
 
 ## Transition and demonstration state
 
