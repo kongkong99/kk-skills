@@ -18,7 +18,7 @@ Use these states as a visual sequence, not a fixed stopwatch: align opening dura
 
 ## Production and acceptance
 
-- Separate editable layers: source presenter, real or simulated interface, opening headline, subtitles, simulation label and transition. Keep source audio and source files intact unless the user requests changes. Adapt the title wording, not the creator's identity or copyrighted footage.
+- Separate editable layers: source presenter, real or simulated interface, opening headline, subtitles, any requested simulation label, and transition. Keep source audio and source files intact unless the user requests changes. Adapt the title wording, not the creator's identity or copyrighted footage.
 - When a source-bound caption system is available, keep subtitle text tied to verified narration and use its actual caption-template workflow to reproduce the chip; do not put captions only in a decorative asset if this loses editable text/timing.
 - At minimum compare reference and output side-by-side at the opening settled state, the last opening moment, the transition and the interface state. Match presenter crop and fill, title placement/weight/color, caption chip position/background/type, interface scale and motion. Inspect the exported video as well as a still in the actual composition.
 - Do not claim a faithful recreation solely because the visual beats are aligned; disclose important differences caused by missing footage or constraints. Re-render after fixes and verify again.

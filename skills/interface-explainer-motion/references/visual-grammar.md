@@ -6,7 +6,7 @@ These are adaptable patterns inferred from finished examples, not claims about t
 
 - **Operation and result:** begin with the complete interface; show the relevant input, cursor or shortcut; crop toward the target and outline it; reveal the actual resulting state; then return to context or continue. A dimmed surrounding region can help when it does not obscure needed context.
 - **Conceptual ladder:** preserve a stable card or diagram while adding one node, relationship or capability at a time. Compare successive levels with consistent placement; introduce color or symbols only where they carry meaning.
-- **Concrete-to-abstract:** show the real object or task, simplify it to a card/diagram to explain its role, then return to actual evidence. Use labels to distinguish an illustration from an actual interface where the distinction could be unclear.
+- **Concrete-to-abstract:** show the real object or task, simplify it to a card/diagram to explain its role, then return to actual evidence. Distinguish an illustration from an actual interface where unclear; when the user explicitly omits an on-screen badge, explain its simulated nature on delivery.
 
 ## Example beat sheet
 
@@ -16,7 +16,7 @@ For the line “Select a project, enter the goal, and the system splits it into 
 | --- | --- | --- | --- |
 | Select a project | Which item to choose | Show project list; focus and outline the chosen item. | Recording or verified screenshot |
 | Enter the goal | What to enter | Move to the input; reveal the actual example. | Recording or verified reconstruction |
-| Splits into steps | What changed | Reveal the result and keep the goal visible; make each step readable. | Actual result, or explicitly labeled illustration |
+| Splits into steps | What changed | Reveal the result and keep the goal visible; make each step readable. | Actual result, or an illustration identified as such |
 
 Plan cues against word-level time when possible; if no audio exists, mark times as placeholders. Choose screen/presenter balance based on legibility rather than a fixed percentage. Avoid covering the target with subtitles, oversized cursors, or decorative effects.
 
