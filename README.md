@@ -11,7 +11,7 @@
 | [knowledge-video-storyboard](skills/knowledge-video-storyboard/SKILL.md) | 把已剪辑口播或逐字稿转换成知识分享视频分镜。 |
 | [interface-explainer-motion](skills/interface-explainer-motion/SKILL.md) | 将口播转为同步的界面演示、动画图解和可编辑视频。 |
 | [x-article-layout](skills/x-article-layout/SKILL.md) | 将长文整理为分节图文排版，标注加粗、生成配图提示词并插入 AI 配图。 |
-| [ppt-order-workflow](skills/ppt-order-workflow/SKILL.md) | 先问演讲时长，按 PPT 模板约束搭骨架、写讲稿，生成 Excel 工单后逐页出片。 |
+| [ppt-order-workflow](skills/ppt-order-workflow/SKILL.md) | 讲稿与 PPT 相互约束：写逐字稿前先读模板排版，讲稿按版式限制组织，PPT 由讲稿决定，生成工单后逐页出片。 |
 
 ## 结构
 
