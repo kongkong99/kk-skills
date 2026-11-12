@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "scope": "Audited source recipes for this user's short-video packaging. No library audio is redistributed.",
+  "profiles": [
+    {
+      "name": "Simple Whoosh",
+      "sourceSha256": "ec5a6364fd90dd071f93f2950924b95105ba02efa5f9f1776a7b10631b99d6c0",
+      "decodedSourceDurationSeconds": 1.32,
+      "sourcePeakSeconds": 0.6235,
+      "sourceInSeconds": 0.3,
+      "sourceOutSeconds": 1.07,
+      "playbackRate": 1.1,
+      "recommendedTimelineDurationSeconds": 0.7,
+      "minimumTimelineDurationSeconds": 0.6666666666666666,
+      "sourceEnergyCoverageBeforeFades": 0.9907,
+      "note": "At 30fps prefer 21 frames. Align the source peak after retiming; do not retain an old clip start blindly. Fades must follow the body. Measurements do not establish subjective sound quality."
+    },
+    {
+      "name": "Airy Short Whoosh",
+      "sourceSha256": "ad00c275c00175ac3beb06b714ee77450e713c72974030ff4e787cc38e1cbdf8",
+      "decodedSourceDurationSeconds": 0.792,
+      "sourcePeakSeconds": 0.466,
+      "sourceInSeconds": 0.3,
+      "sourceOutSeconds": 0.7,
+      "playbackRate": 1,
+      "recommendedTimelineDurationSeconds": 0.4,
+      "minimumTimelineDurationSeconds": 0.35,
+      "sourceEnergyCoverageBeforeFades": 0.9979,
+      "note": "Existing 11-frame clips at 30fps (0.3667 seconds) also retain the body. Do not select only source 0–0.2 seconds."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="UTF-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden}.field{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+</style></head><body><svg class="field" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"><rect class="background" width="1080" height="1920"/><g class="dots"></g></svg>
+<script type="module">
+export default function mount({root,props}){
+ let values=props||{};const field=root.querySelector('.dots'),background=root.querySelector('.background'),stars=[];
+ let seed=1212;function random(){seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;}
+ for(let i=0;i<135;i++){const depth=.55+random()*.75;const node=document.createElementNS('http://www.w3.org/2000/svg','circle');node.setAttribute('r',String(1.25+depth*1.75));node.setAttribute('opacity',String(.20+random()*.36));field.appendChild(node);stars.push({node,x:random()*1120-20,y:random()*1960-20,vx:3.2*depth,vy:-6.2*depth});}
+ const wrap=(x,n)=>((x%n)+n)%n;
+ return{update({props}){values=props||{}},render({timeSeconds}){const speed=Number(values.speed??1),t=(Number(timeSeconds)||0)+Number(values.timeOffset??0);background.setAttribute('fill',values.backgroundColor??'#0b1018');for(const s of stars){s.node.setAttribute('fill',values.dotColor??'#ffffff');s.node.setAttribute('cx',String(wrap(s.x+20+s.vx*t*speed,1120)-20));s.node.setAttribute('cy',String(wrap(s.y+20+s.vy*t*speed,1960)-20));}},dispose(){field.replaceChildren();}};
+}
+</script></body></html>

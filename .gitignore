@@ -6,3 +6,7 @@ __pycache__/
 *.py[cod]
 .venv/
 node_modules/
+
+# Local-only references contain personal information.
+/skills/workbuddy-simulator/references/界面截图/
+/skills/workbuddy-simulator/references/运行逐帧参考.mp4

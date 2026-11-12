@@ -30,4 +30,10 @@ A useful starting direction inspired by the sampled references is a restrained d
 - **Diagram:** create editable text/cards, connectors, and icons; bring them in at their spoken cue, keeping earlier elements stable so the relationship remains clear.
 - **Composition:** use separately adjustable presenter, screen, overlays, and captions where the host allows. Ensure crop and captions do not obscure target controls or results.
 
-As optional first tests, an entry can take roughly 0.2–0.4 seconds and a focus move 0.3–0.6 seconds; adjust to the voice, reading time and requested style. These are suggested starting values, not measurements of the creator’s project. Animate in seconds and preserve the same timing at different frame rates.
+For general work, an entry can take roughly 0.2–0.4 seconds and a focus move 0.3–0.6 seconds as optional first tests. This user's WorkBuddy shorts instead follow the faster [push/pull timing](jeff-person-openings.md#推拉速度与开头三秒); do not fall back to these general timings for that series. These are production starting values, not measurements of the creator’s project. Animate in seconds and preserve the same timing at different frame rates.
+
+## Sparse star background for this user's series
+
+Use a near-black canvas with sparse white dots that drift slowly or show subtle parallax, not a static wallpaper. Keep brightness steady and motion subordinate to the presenter, text and UI. Initialize positions, sizes and drift speeds once from a fixed random seed, then calculate positions from elapsed seconds; never re-randomize each frame, flash, or visibly jump when looping. A gentle starting drift is 1–4 output pixels per second at 1080-pixel width, adjusted to the shot. Background drift is atmosphere, not an event counted toward the two-second/first-ten-second pacing rules. Check the rendered motion over time, not just a still.
+
+The lightweight [drifting-stars HTML example](../assets/drifting-stars.html) is validated in ChatCut’s HTML Motion Graphic runtime. It exposes speed, timeOffset, backgroundColor and dotColor; register those properties when importing. Drive it with timeSeconds and set each shot’s timeOffset to preserve drift continuity. Adapt or replace it when using another renderer.

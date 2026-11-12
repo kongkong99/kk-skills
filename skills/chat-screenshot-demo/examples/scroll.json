@@ -1,0 +1,141 @@
+{
+  "title": "小林",
+  "status_time": "20:38",
+  "participants": {
+    "left": {
+      "name": "小林",
+      "color": "#86a5a3"
+    },
+    "right": {
+      "name": "小周",
+      "color": "#b69279"
+    }
+  },
+  "messages": [
+    {
+      "side": "left",
+      "time": "今天 10:32",
+      "text": "你昨天说的那个选题我看了"
+    },
+    {
+      "side": "right",
+      "text": "感觉怎么样？"
+    },
+    {
+      "side": "left",
+      "text": "方向挺好的，开头可以再具体一点"
+    },
+    {
+      "side": "right",
+      "text": "从一个真实的小问题切入？"
+    },
+    {
+      "side": "left",
+      "text": "对，先让大家知道为什么要看"
+    },
+    {
+      "side": "right",
+      "text": "明白了"
+    },
+    {
+      "side": "left",
+      "time": "10:48",
+      "text": "比如先说一个做内容时常见的困扰"
+    },
+    {
+      "side": "right",
+      "text": "写了很多，却不知道重点是什么"
+    },
+    {
+      "side": "left",
+      "text": "这个就很有画面"
+    },
+    {
+      "side": "right",
+      "text": "然后再介绍整理思路的方法"
+    },
+    {
+      "side": "left",
+      "text": "可以，先给一个简单的步骤"
+    },
+    {
+      "side": "right",
+      "text": "我把提纲发你看看"
+    },
+    {
+      "side": "left",
+      "time": "11:06",
+      "text": "好，我现在有时间"
+    },
+    {
+      "side": "right",
+      "text": "第一步，先写清楚这条内容想解决什么问题"
+    },
+    {
+      "side": "right",
+      "text": "第二步，挑一个例子说明"
+    },
+    {
+      "side": "left",
+      "text": "再给观众一个可以尝试的小动作"
+    },
+    {
+      "side": "right",
+      "text": "对，这样结尾也更自然"
+    },
+    {
+      "side": "left",
+      "text": "我觉得比之前清楚多了"
+    },
+    {
+      "side": "right",
+      "time": "14:20",
+      "text": "我重新整理了一遍"
+    },
+    {
+      "side": "left",
+      "text": "辛苦啦"
+    },
+    {
+      "side": "right",
+      "text": "我们下午找十分钟对一下？"
+    },
+    {
+      "side": "left",
+      "text": "可以，三点以后都方便"
+    },
+    {
+      "side": "right",
+      "text": "那就三点半"
+    },
+    {
+      "side": "left",
+      "text": "好，到时候见"
+    },
+    {
+      "side": "right",
+      "time": "15:38",
+      "text": "刚才讨论的几个点我记下来了"
+    },
+    {
+      "side": "left",
+      "text": "好的，先把开头那段改一下"
+    },
+    {
+      "side": "right",
+      "text": "改完我再发你"
+    },
+    {
+      "side": "left",
+      "text": "没问题"
+    },
+    {
+      "side": "right",
+      "text": "今天推进得很顺利"
+    },
+    {
+      "side": "left",
+      "text": "是的，接下来可以开始做示例了"
+    }
+  ]
+}

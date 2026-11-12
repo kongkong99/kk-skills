@@ -1,0 +1,44 @@
+{
+  "title": "小林",
+  "status_time": "9:41",
+  "participants": {
+    "left": {
+      "name": "小林",
+      "color": "#86a5a3"
+    },
+    "right": {
+      "name": "小周",
+      "color": "#b69279"
+    }
+  },
+  "messages": [
+    {
+      "side": "left",
+      "time": "今天 10:30",
+      "text": "你好，我想了解一下课程。"
+    },
+    {
+      "side": "right",
+      "text": "你好！你想先了解哪些内容？"
+    },
+    {
+      "side": "left",
+      "text": "我想先试听一节。"
+    },
+    {
+      "side": "right",
+      "text": "可以，我把试听安排发给你。",
+      "quote": "小林：我想先试听一节。"
+    },
+    {
+      "side": "left",
+      "type": "transfer",
+      "amount": "10.00",
+      "status": "已被接收"
+    },
+    {
+      "side": "right",
+      "text": "收到，谢谢！"
+    }
+  ]
+}
