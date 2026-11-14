@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "Audited source recipes for this user's short-video packaging. No library audio is redistributed.",
+  "scope": "Audited source recipes for the bundled production whoosh files; file paths are relative to this JSON.",
   "profiles": [
     {
       "name": "Simple Whoosh",
@@ -13,7 +13,8 @@
       "recommendedTimelineDurationSeconds": 0.7,
       "minimumTimelineDurationSeconds": 0.6666666666666666,
       "sourceEnergyCoverageBeforeFades": 0.9907,
-      "note": "At 30fps prefer 21 frames. Align the source peak after retiming; do not retain an old clip start blindly. Fades must follow the body. Measurements do not establish subjective sound quality."
+      "note": "At 30fps prefer 21 frames. Align the source peak after retiming; do not retain an old clip start blindly. Fades must follow the body. Measurements do not establish subjective sound quality.",
+      "file": "simple-whoosh.mp3"
     },
     {
       "name": "Airy Short Whoosh",
@@ -26,7 +27,8 @@
       "recommendedTimelineDurationSeconds": 0.4,
       "minimumTimelineDurationSeconds": 0.35,
       "sourceEnergyCoverageBeforeFades": 0.9979,
-      "note": "Existing 11-frame clips at 30fps (0.3667 seconds) also retain the body. Do not select only source 0–0.2 seconds."
+      "note": "Existing 11-frame clips at 30fps (0.3667 seconds) also retain the body. Do not select only source 0–0.2 seconds.",
+      "file": "airy-short-whoosh.mp3"
     }
   ]
 }

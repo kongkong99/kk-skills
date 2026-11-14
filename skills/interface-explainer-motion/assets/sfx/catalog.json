@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "pathBase": "this catalog directory",
+  "gainPolicy": "Source-specific values are starting points, not fixed loudness guarantees. Preserve headroom and check the exported mix.",
+  "assets": [
+    {
+      "file": "simple-whoosh.mp3",
+      "originalTitle": "Simple Whoosh.mp3",
+      "role": "camera movement",
+      "origin": "ChatCut sound-effects library; production source reused from this user’s local project",
+      "sha256": "ec5a6364fd90dd071f93f2950924b95105ba02efa5f9f1776a7b10631b99d6c0",
+      "sizeBytes": 52800,
+      "durationSeconds": 1.32,
+      "sampleRateHz": 48000,
+      "channels": 2,
+      "profileFile": "whoosh-profiles.json"
+    },
+    {
+      "file": "airy-short-whoosh.mp3",
+      "originalTitle": "Airy Short Whoosh.mp3",
+      "role": "light camera movement",
+      "origin": "ChatCut sound-effects library; production source reused from this user’s local project",
+      "sha256": "ad00c275c00175ac3beb06b714ee77450e713c72974030ff4e787cc38e1cbdf8",
+      "sizeBytes": 31680,
+      "durationSeconds": 0.792,
+      "sampleRateHz": 48000,
+      "channels": 2,
+      "profileFile": "whoosh-profiles.json"
+    },
+    {
+      "file": "mouse-click-library.mp3",
+      "originalTitle": "Mouse Click.mp3",
+      "role": "UI click or chat switch",
+      "origin": "ChatCut sound-effects library; production source reused from this user’s local project",
+      "sha256": "58a3edb35201d02e541f7c8fe3a43d4b02e8cec9c81f417a150fe21bfc3852be",
+      "sizeBytes": 9600,
+      "durationSeconds": 0.24,
+      "sampleRateHz": 48000,
+      "channels": 2
+    },
+    {
+      "file": "tiny-bubble-pop.mp3",
+      "originalTitle": "Tiny Bubble Pop.mp3",
+      "role": "result reveal",
+      "origin": "ChatCut sound-effects library; production source reused from this user’s local project",
+      "sha256": "3506a0f9e402d96e322ee7992e0ff87ce8a11bf90f963b58d989999a0ab4fd81",
+      "sizeBytes": 6720,
+      "durationSeconds": 0.168,
+      "sampleRateHz": 48000,
+      "channels": 2
+    },
+    {
+      "file": "keyboard-slow-dell.mp3",
+      "originalTitle": "Slow Dell Keyboard Typing.mp3",
+      "role": "visible typing",
+      "origin": "ChatCut sound-effects library; production source reused from this user’s local project",
+      "sha256": "bdff2d6a49274543157577647c221133c4c6f90cad279e052f110062d165ac30",
+      "sizeBytes": 2734080,
+      "durationSeconds": 68.352,
+      "sampleRateHz": 48000,
+      "channels": 2,
+      "exampleWindows": [
+        {
+          "sourceInSeconds": 18.14,
+          "sourceOutSeconds": 18.606666666666666,
+          "playbackRate": 1,
+          "startingGainDb": 6.7
+        },
+        {
+          "sourceInSeconds": 22.54,
+          "sourceOutSeconds": 23.006666666666664,
+          "playbackRate": 1,
+          "startingGainDb": 7.4
+        }
+      ],
+      "note": "Window gains are previous-project starting values. Match narration and verify the mix; never play the whole source under pauses."
+    }
+  ]
+}
