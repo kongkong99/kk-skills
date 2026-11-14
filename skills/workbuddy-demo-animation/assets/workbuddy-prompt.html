@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkBuddy 提示词演示</title>
+<style>
+  *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080909}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;color:#f8f8f8}
+  .stage{position:relative;width:100%;height:100%;overflow:hidden;background-color:#080909;background-image:radial-gradient(circle,#626565 0 2px,transparent 3px),radial-gradient(circle,#474b4a 0 1.7px,transparent 3px);background-size:31% 18%,37% 24%;background-position:8% 5%,23% 12%}
+  .label{position:absolute;top:2.4%;right:4%;color:#bfc2c0;font-size:clamp(12px,2vw,20px);letter-spacing:.08em}
+  .profile-name{position:absolute;top:2.4%;left:4%;max-width:60%;color:#dce4ec;font-size:clamp(12px,2vw,20px);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.profile-name[hidden]{display:none}
+  .content{position:absolute;left:50%;top:50%;width:min(82%,820px);height:min(78%,1230px);transform:translate(-50%,-50%);display:flex;align-items:center;flex-direction:column;justify-content:center;gap:min(3.5vh,60px)}
+  .brand{width:clamp(54px,11vw,126px);height:clamp(54px,11vw,126px);border-radius:50%;box-shadow:0 0 30px #000;flex:none}
+  .card{position:relative;width:100%;height:min(57vh,1100px);min-height:160px;background:#111212;border:clamp(8px,2vw,24px) solid #171818;outline:2px solid #777;border-radius:clamp(24px,5vw,70px);box-shadow:0 10px 40px #000;overflow:hidden}
+  .text{position:absolute;left:8%;right:8%;top:9%;bottom:17%;white-space:pre-wrap;overflow:hidden;overflow-wrap:anywhere;line-height:1.2;font-size:var(--prompt-font-size,clamp(24px,4vw,48px));font-weight:500;letter-spacing:.005em}
+  .cursor{display:inline-block;width:2px;height:1em;vertical-align:-.1em;background:#f6f6f6;margin-left:2px}
+  .send{position:absolute;right:6%;bottom:5%;width:clamp(32px,6.2vw,68px);aspect-ratio:1;border-radius:25%;display:grid;place-items:center;background:#f5f5f5;color:#111}
+  .send svg{width:60%;height:60%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .controls{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;color:#ddd;font-size:13px}
+  .controls button{background:#333;color:white;border:0;border-radius:5px;padding:7px 10px}.controls input{width:24vw}
+  body.clean .controls{display:none}
+:root{--accent-color:#386b85;--background-color:#101722}.stage{background-color:var(--background-color);background-image:none}.stage.stars{background-image:radial-gradient(circle,#626565 0 2px,transparent 3px),radial-gradient(circle,#474b4a 0 1.7px,transparent 3px)}.brand{background:var(--accent-color)}.cursor{background:var(--accent-color)}</style>
+</head>
+<body>
+<div class="stage">
+  <div class="label">模拟演示</div>
+  <div class="profile-name" id="profileName" hidden></div>
+  <div class="content">
+    <img class="brand" alt="WorkBuddy" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2257%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%225%22%2F%3E%3Cpath%20d%3D%22M26%2034l14%2052%2020-38%2020%2038%2014-52%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%228%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+    <div class="card"><div class="text"><span id="prompt"></span><span class="cursor" id="cursor"></span></div><div class="send" aria-label="发送示意"><svg viewBox="0 0 32 32"><path d="M16 25V7M7 16l9-9 9 9"/></svg></div></div>
+  </div>
+  <div class="controls"><button id="toggle">暂停</button><input id="slider" type="range" min="0" step="0.01"><span id="time"></span></div>
+</div>
+<script id="prompt-config" type="application/json">
+{
+  "prompt": "请帮我整理这份会议记录，\n提取关键决定和待办事项，\n并按负责人和截止时间列成表格。",
+  "duration": 7,
+  "typingStart": 0.8,
+  "typingEnd": 5.2,
+  "fontSize": "clamp(24px,4vw,48px)",
+  "accentColor": "#386b85",
+  "backgroundColor": "#101722",
+  "starBackground": false,
+  "brandImage": "",
+  "profileName": ""
+}
+</script>
+<script>
+(() => {
+  const config=JSON.parse(document.getElementById('prompt-config').textContent);
+  const profile=document.getElementById('profileName');
+  profile.textContent=String(config.profileName||'').trim();
+  profile.hidden=!profile.textContent;
+  document.documentElement.style.setProperty('--prompt-font-size',String(config.fontSize||'clamp(24px,4vw,48px)'));
+  document.documentElement.style.setProperty('--accent-color',String(config.accentColor||'#386b85'));
+  document.documentElement.style.setProperty('--background-color',String(config.backgroundColor||'#101722'));
+  document.querySelector('.stage').classList.toggle('stars',config.starBackground===true);
+  if(config.brandImage)document.querySelector('.brand').src=String(config.brandImage);
+  const duration=Number(config.duration)>0?Number(config.duration):7;
+  const start=Math.max(0,Number(config.typingStart)||0);
+  const end=Math.max(start+.01,Number(config.typingEnd)||duration-1);
+  const text=String(config.prompt||'');
+  const chars=typeof Intl.Segmenter==='function'?Array.from(new Intl.Segmenter('zh',{granularity:'grapheme'}).segment(text),x=>x.segment):Array.from(text);
+  const output=document.getElementById('prompt'),cursor=document.getElementById('cursor'),slider=document.getElementById('slider'),time=document.getElementById('time'),toggle=document.getElementById('toggle');
+  let position=0,playing=true,last=performance.now();
+  slider.max=String(duration);
+  if(new URLSearchParams(location.search).has('clean')){document.body.classList.add('clean');playing=false}
+  function render(){
+    const progress=Math.max(0,Math.min(1,(position-start)/(end-start)));
+    output.textContent=chars.slice(0,Math.floor(progress*chars.length)).join('');
+    cursor.style.visibility=position>=end||Math.floor(position*2)%2===0?'visible':'hidden';
+    slider.value=String(position);time.textContent=position.toFixed(1)+' / '+duration.toFixed(1)+' 秒';
+    toggle.textContent=playing?'暂停':'播放';
+  }
+  window.validateSimulation=()=>{
+    const saved=position;position=end;render();
+    const box=document.querySelector('.text'),errors=[];
+    if(box.scrollHeight>box.clientHeight+1||box.scrollWidth>box.clientWidth+1)errors.push('Prompt text overflows its card; split the text or adjust fontSize/layout before export.');
+    if(!profile.hidden&&profile.scrollWidth>profile.clientWidth+1)errors.push('profileName is too long for the header; shorten it or adjust the layout before export.');
+    if(!(start>=0&&end>start&&end<duration))errors.push('Require 0 <= typingStart < typingEnd < duration.');
+    position=saved;render();return errors;
+  };
+  window.SIMULATION_DURATION=duration;
+  window.setSimulationTime=value=>{position=Math.max(0,Math.min(duration,Number(value)||0));render()};
+  window.WorkBuddyPrompt={seek:window.setSimulationTime,play(){playing=true;last=performance.now()},pause(){playing=false;render()},get duration(){return duration}};
+  toggle.onclick=()=>{playing=!playing;if(playing&&position>=duration)position=0;last=performance.now();render()};
+  slider.oninput=()=>{playing=false;window.setSimulationTime(slider.value)};
+  function tick(now){if(playing){position=Math.min(duration,position+(now-last)/1000);if(position>=duration)playing=false;render()}last=now;requestAnimationFrame(tick)}
+  render();requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
