@@ -1,5 +1,5 @@
 ---
-name: ppt-production-workflow
+name: kongkong99-ppt-production-workflow
 version: "1.0.0"
 display_name: "讲稿与 PPT 协同制作"
 display_name_en: "Script and Slide Production"

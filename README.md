@@ -8,7 +8,7 @@
 
 | Skill | 用途 |
 | --- | --- |
-| [ppt-production-workflow](skills/ppt-production-workflow/SKILL.md) | 按模板与演讲目标协同设计讲稿、Excel 工单和 PPTX。 |
+| [kongkong99-ppt-production-workflow](skills/kongkong99-ppt-production-workflow/SKILL.md) | 按模板与演讲目标协同设计讲稿、Excel 工单和 PPTX。 |
 | [short-video-packaging](skills/short-video-packaging/SKILL.md) | 剪辑口播并制作字幕、画面、界面演示和音效包装。 |
 | [workbuddy-demo-animation](skills/workbuddy-demo-animation/SKILL.md) | 制作可编辑的 WorkBuddy 模拟教程画面、提示词动画与演示视频。 |
 
