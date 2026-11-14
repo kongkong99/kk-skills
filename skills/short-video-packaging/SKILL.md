@@ -1,5 +1,10 @@
 ---
 name: short-video-packaging
+version: "1.0.0"
+display_name: "短视频包装"
+display_name_en: "Short Video Packaging"
+description_zh: "剪辑和包装口播短视频、知识分享及软件教程，把讲解与字幕、录屏、示意动画、B-roll 和音效同步，产出分镜、可编辑工程或成片。用户提出口播剪辑、短视频包装、去停顿与气口、字幕包装、软件讲解配画面时使用；只需独立界面模拟时使用相应模拟工具。"
+description_en: "Edit and package talking-head shorts, educational videos, and software tutorials. Synchronize speech with captions, screen recordings, explanatory animation, B-roll, and sound effects to deliver storyboards, editable projects, or finished videos. Use for speech cleanup, pause and breath editing, caption design, and visual explanations; use a dedicated simulator for standalone interface mockups."
 description: 剪辑和包装口播短视频、知识分享及软件教程，把讲解与字幕、录屏、示意动画、B-roll 和音效同步，产出分镜、可编辑工程或成片。用户提出口播剪辑、短视频包装、去停顿与气口、字幕包装、软件讲解配画面时使用；只需独立界面模拟时使用相应模拟工具。
 ---
 

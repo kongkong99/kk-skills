@@ -1,5 +1,10 @@
 ---
 name: workbuddy-demo-animation
+version: "1.0.0"
+display_name: "WorkBuddy 演示动画"
+display_name_en: "WorkBuddy Demo Animation"
+description_zh: "根据任务描述制作 WorkBuddy 风格的任务运行模拟、提示词输入动画和图片结果展示，交付可编辑 HTML、截图或 MP4。用户要 WorkBuddy 教程动画、软件演示素材、模拟执行过程或提示词打字视频时使用；不用于实际操作 WorkBuddy。"
+description_en: "Create WorkBuddy-style task simulations, prompt typing animations, and image result reveals from a task description. Deliver editable HTML, screenshots, or MP4 videos for WorkBuddy tutorials and illustrative demonstrations. This skill creates simulated visuals and does not operate WorkBuddy or verify real task execution."
 description: 根据任务描述制作 WorkBuddy 风格的任务运行模拟、提示词输入动画和图片结果展示，交付可编辑 HTML、截图或 MP4。用户要 WorkBuddy 教程动画、软件演示素材、模拟执行过程或提示词打字视频时使用；不用于实际操作 WorkBuddy。
 ---
 

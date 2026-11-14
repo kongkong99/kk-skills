@@ -1,5 +1,10 @@
 ---
 name: ppt-production-workflow
+version: "1.0.0"
+display_name: "讲稿与 PPT 协同制作"
+display_name_en: "Script and Slide Production"
+description_zh: "为演讲、培训、汇报或路演协同制作讲稿与整套 PPT：分析模板容量，规划逐页内容，生成可编辑 Excel 工单，再制作并核对 PPTX。用户提到按模板做 PPT、讲稿配幻灯片、逐页工单或整套演示文稿时使用；不用于只改单页或单纯润色文字。"
+description_en: "Create coordinated speaker scripts and slide decks for talks, training, reports, or pitches. Analyze template capacity, plan slide content, generate an editable Excel production sheet, and produce and check PPTX files. Use for template-based presentations, scripts paired with slides, or slide-by-slide production planning; not for isolated slide edits or text polishing."
 description: 为演讲、培训、汇报或路演协同制作讲稿与整套 PPT：分析模板容量，规划逐页内容，生成可编辑 Excel 工单，再制作并核对 PPTX。用户提到按模板做 PPT、讲稿配幻灯片、逐页工单或整套演示文稿时使用；不用于只改单页或单纯润色文字。
 ---
 
