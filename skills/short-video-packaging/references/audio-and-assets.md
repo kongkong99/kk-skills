@@ -13,7 +13,7 @@
 
 ## 包内原创合成音效
 
-[catalog.json](../assets/sfx/catalog.json) 只登记以下由包内脚本生成的声音：
+[catalog.json](../assets/catalog.json) 只登记以下由包内脚本生成的声音：
 
 - `mouse-click.wav`：0.12 秒单声道短点击。
 - `zoom-whoosh.wav`：0.38 秒单声道移动提示。

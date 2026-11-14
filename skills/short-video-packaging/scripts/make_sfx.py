@@ -7,7 +7,7 @@ import wave
 from pathlib import Path
 
 RATE = 48000
-OUT = Path(__file__).resolve().parents[1] / 'assets' / 'sfx'
+OUT = Path(__file__).resolve().parents[1] / 'assets'
 OUT.mkdir(parents=True, exist_ok=True)
 
 def write(name, samples):

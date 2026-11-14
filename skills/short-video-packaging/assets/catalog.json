@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "pathBase": "this catalog directory",
-  "generator": "../../scripts/make_sfx.py",
+  "generator": "../scripts/make_sfx.py",
   "gainPolicy": "Adjust to narration and verify the exported mix; no fixed loudness guarantee.",
   "assets": [
     {
