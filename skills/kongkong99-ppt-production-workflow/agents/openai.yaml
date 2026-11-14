@@ -1,0 +1,7 @@
+interface:
+  display_name: "讲稿与 PPT 协同制作"
+  short_description: "从模板和演讲目标出发，协同生成讲稿、逐页 Excel 工单与 PPTX"
+  default_prompt: "请使用 $kongkong99-ppt-production-workflow，根据我的主题、时长和模板协同制作讲稿、Excel 工单与 PPT。"
+policy:
+  allow_implicit_invocation: true
+

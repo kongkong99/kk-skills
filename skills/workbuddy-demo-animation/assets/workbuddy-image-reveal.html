@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkBuddy 图片展示示例</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080909;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}.stage{position:absolute;width:1080px;height:1920px;left:50%;top:50%;transform-origin:center;overflow:hidden;background-color:#080909;background-image:radial-gradient(circle,#929696 0 3px,transparent 4px),radial-gradient(circle,#747878 0 2.5px,transparent 4px);background-size:23% 13%,29% 19%;background-position:0px 0px,100px 80px;color:#172b2d}
+.app{position:absolute;left:80px;top:250px;width:920px;height:1320px;background:#edf6f5;border-radius:30px;box-shadow:0 32px 110px #0008;overflow:hidden}.header{height:104px;padding:28px 40px;background:#fff;display:flex;align-items:center;gap:18px;font-size:32px;font-weight:700}.mark{width:42px;height:42px}.body{padding:64px 70px;color:#23383a;font-size:32px}.prompt{background:#d8ecea;border-radius:30px;padding:28px 34px;margin-left:84px;line-height:1.5}.answer{display:flex;gap:16px;margin-top:64px;font-size:30px;align-items:center}.answer img{width:42px;height:42px}.status{margin:24px 0 0 58px;font-size:28px;color:#597674}.result-label{position:absolute;left:154px;top:590px;font-size:26px;color:#456461}
+
+.backdrop{position:absolute;inset:0;background-color:#070909;background-image:radial-gradient(circle,#929696 0 3px,transparent 4px),radial-gradient(circle,#747878 0 2.5px,transparent 4px);background-size:23% 13%,29% 19%;background-position:0px 0px,100px 80px;opacity:0}.picture{position:absolute;z-index:2;padding:7px;background:#fff;border-radius:20px;box-shadow:0 15px 45px #0004;overflow:visible}.picture img{display:block;width:100%;height:100%;object-fit:contain;border-radius:13px;background:#111}.picture .border{position:absolute;inset:-5px;border:5px solid #12c895;border-radius:26px;opacity:0;pointer-events:none}.cursor{position:absolute;z-index:3;width:58px;height:70px;filter:drop-shadow(0 3px 4px #0009)}.cursor svg{width:100%;height:100%}.ring{position:absolute;z-index:4;width:84px;height:84px;border:4px solid white;border-radius:50%;pointer-events:none;opacity:0}.label{position:absolute;z-index:5;right:56px;top:65px;color:#e2eeea;font-size:26px;letter-spacing:2px}.controls{position:absolute;z-index:6;bottom:38px;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:center;color:white;font-size:23px}.controls button{background:#344744;border:0;color:white;border-radius:8px;padding:9px 16px}.controls input{width:300px}body.clean .controls{display:none}
+:root{--accent-color:#386b85;--background-color:#101722}.stage,.backdrop{background-color:var(--background-color);background-image:none}.stage.stars,.stage.stars .backdrop{background-image:radial-gradient(circle,#929696 0 3px,transparent 4px),radial-gradient(circle,#747878 0 2.5px,transparent 4px)}.mark,.answer img{background:var(--accent-color);border-radius:50%}.picture .border{border-color:var(--accent-color)}</style></head>
+<body><div class="stage" id="stage">
+ <div class="app"><div class="header"><img class="mark" id="mark" alt="">WorkBuddy</div><div class="body"><div class="prompt" id="promptText">请帮我设计一张周末咖啡主题海报。</div><div class="answer"><img id="smallMark" alt=""><strong>WorkBuddy</strong></div><div class="status" id="statusText">已完成 · 图片结果如下</div></div></div>
+ <div class="backdrop" id="backdrop"></div><div class="picture" id="picture"><img id="art" alt="图片结果"><div class="border" id="border"></div></div>
+ <div class="cursor" id="cursor"><svg viewBox="0 0 58 70"><path d="M6 4v49l12-11 9 21 8-4-9-20 18-1z" fill="#fff" stroke="#152122" stroke-width="4" stroke-linejoin="round"/></svg></div><div class="ring" id="ring"></div><div class="label">模拟演示</div>
+ <div class="controls"><button id="toggle">暂停</button><input id="slider" type="range" min="0" step="0.01"><span id="time"></span></div>
+</div>
+<script id="image-reveal-config" type="application/json">
+{
+  "imageSrc": "",
+  "duration": 4,
+  "clickAt": 0.6,
+  "zoomAt": 0.75,
+  "zoomDuration": 0.55,
+  "returnAt": 3.2,
+  "returnDuration": 0.55,
+  "prompt": "请设计一张周末咖啡主题海报（演示任务）。",
+  "statusText": "示例图片 · 点击查看",
+  "accentColor": "#386b85",
+  "backgroundColor": "#101722",
+  "starBackground": false,
+  "brandImage": ""
+}
+</script>
+<script>
+(() => {
+ const c=JSON.parse(document.getElementById('image-reveal-config').textContent), duration=Math.max(1,Number(c.duration)||2);
+ const click=Number(c.clickAt)||.4, start=Number(c.zoomAt)||.52, zoomDuration=Math.max(.1,Number(c.zoomDuration)||.3), ret=Number(c.returnAt)||1.65, retDuration=Math.max(.1,Number(c.returnDuration)||.3);
+ const poster=`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000"><defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#f8d890"/><stop offset="1" stop-color="#eb7959"/></linearGradient></defs><rect width="800" height="1000" fill="url(#b)"/><circle cx="410" cy="505" r="285" fill="#f8edcf"/><circle cx="410" cy="505" r="220" fill="#9a553c"/><circle cx="410" cy="505" r="170" fill="#543a32"/><path d="M585 410q175 0 130 130-22 55-122 55" fill="none" stroke="#f8edcf" stroke-width="46"/><path d="M355 500q55-160 110 0-55 160-110 0" fill="#e3bc85"/><path d="M410 360q-38 145 0 280" fill="none" stroke="#714931" stroke-width="10"/><text x="400" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="74" fill="#392d25">WEEKEND</text><text x="400" y="235" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="74" fill="#392d25">COFFEE</text><text x="400" y="895" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" letter-spacing="8" fill="#392d25">TAKE A LITTLE BREAK</text></svg>`;
+ const fallback='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(poster);
+ const svgMark='data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%2257%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%225%22%2F%3E%3Cpath%20d%3D%22M26%2034l14%2052%2020-38%2020%2038%2014-52%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%228%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E';
+ document.getElementById('mark').src=c.brandImage||svgMark;document.getElementById('smallMark').src=c.brandImage||svgMark;
+ document.getElementById('promptText').textContent=c.prompt||'请设计一张海报（演示任务）。';
+ document.getElementById('statusText').textContent=c.statusText||'示例图片 · 点击查看';
+ document.documentElement.style.setProperty('--accent-color',String(c.accentColor||'#386b85'));
+ document.documentElement.style.setProperty('--background-color',String(c.backgroundColor||'#101722'));
+ document.getElementById('stage').classList.toggle('stars',c.starBackground===true);
+ document.getElementById('art').src=c.imageSrc||fallback;
+ const stage=document.getElementById('stage'), picture=document.getElementById('picture'), art=document.getElementById('art'), backdrop=document.getElementById('backdrop'), border=document.getElementById('border'), cursor=document.getElementById('cursor'), ring=document.getElementById('ring'), slider=document.getElementById('slider'), time=document.getElementById('time'),toggle=document.getElementById('toggle');
+ const clamp=x=>Math.min(1,Math.max(0,x)), ease=x=>1-Math.pow(1-clamp(x),3), mix=(a,b,t)=>a+(b-a)*t;
+ let position=0,playing=true,last=performance.now();slider.max=duration;
+ if(new URLSearchParams(location.search).has('clean')){document.body.classList.add('clean');playing=false}
+ function scaleStage(){stage.style.transform=`translate(-50%,-50%) scale(${Math.min(innerWidth/1080,innerHeight/1920)})`};addEventListener('resize',scaleStage);scaleStage();
+ function render(){
+  const rise=ease((position-start)/zoomDuration), fall=ease((position-ret)/retDuration), p=rise*(1-fall), r=clamp((position-(click-.32))/.32);
+  const x=mix(380,120,p),y=mix(840,420,p),w=mix(320,840,p),h=mix(365,1050,p);
+  Object.assign(picture.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px'});art.style.filter=`blur(${(8*(1-rise)).toFixed(2)}px)`;backdrop.style.opacity=(.72*p).toFixed(3);border.style.opacity=String(p);
+  cursor.style.left=mix(710,535,r)+'px';cursor.style.top=mix(1200,1000,r)+'px';cursor.style.opacity=String(1-ease((position-(click+.04))/.12));
+  const pulse=clamp((position-click)/.16);ring.style.left='502px';ring.style.top='965px';ring.style.opacity=position>=click&&pulse<1?String(1-pulse):'0';ring.style.transform=`scale(${.3+pulse})`;
+  slider.value=position;time.textContent=position.toFixed(1)+' / '+duration.toFixed(1)+' 秒';toggle.textContent=playing?'暂停':'播放';
+ }
+ window.SIMULATION_DURATION=duration;window.setSimulationTime=value=>{position=Math.max(0,Math.min(duration,Number(value)||0));render()};
+ toggle.onclick=()=>{playing=!playing;if(playing&&position>=duration)position=0;last=performance.now();render()};slider.oninput=()=>{playing=false;window.setSimulationTime(slider.value)};
+ function tick(now){if(playing){position=Math.min(duration,position+(now-last)/1000);if(position>=duration)playing=false;render()}last=now;requestAnimationFrame(tick)}render();requestAnimationFrame(tick);
+})();
+</script></body></html>

@@ -2,7 +2,19 @@
 
 个人 Skills 集合：把可重复的工作方法整理成可维护、可复用的独立 Skill。
 
-## 目录
+## 通用公开版
+
+首次使用建议从下面三个独立技能开始。它们使用通用默认值，支持自己的素材、品牌和输出要求；原有个人版保留。
+
+| Skill | 用途 |
+| --- | --- |
+| [kongkong99-ppt-production-workflow](skills/kongkong99-ppt-production-workflow/SKILL.md) | 按模板与演讲目标协同设计讲稿、Excel 工单和 PPTX。 |
+| [short-video-packaging](skills/short-video-packaging/SKILL.md) | 剪辑口播并制作字幕、画面、界面演示和音效包装。 |
+| [workbuddy-demo-animation](skills/workbuddy-demo-animation/SKILL.md) | 制作可编辑的 WorkBuddy 模拟教程画面、提示词动画与演示视频。 |
+
+安装、依赖和使用示例见 [公开版使用说明](PUBLIC_SKILLS.md)。
+
+## 原有技能
 
 | Skill | 用途 |
 | --- | --- |
@@ -27,3 +39,4 @@
 4. 提交前检查是否包含密钥、个人或客户资料，以及第三方内容的来源和授权。
 
 不同工具的安装路径和加载方式可能不同，请以工具当前文档为准。
+
