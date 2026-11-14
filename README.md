@@ -13,6 +13,7 @@
 | [workbuddy-simulator](skills/workbuddy-simulator/SKILL.md) | 生成可编辑的 WorkBuddy 模拟界面、Prompt 卡片与图片揭晓动画。 |
 | [chat-screenshot-demo](skills/chat-screenshot-demo/SKILL.md) | 生成微信风格长屏聊天案例与滚动视频，含 10 个整头像打码模板。 |
 | [x-article-layout](skills/x-article-layout/SKILL.md) | 将长文整理为分节图文排版，标注加粗、生成配图提示词并插入 AI 配图。 |
+| [ppt-order-workflow](skills/ppt-order-workflow/SKILL.md) | 讲稿与 PPT 相互约束：写逐字稿前先读模板排版，讲稿按版式限制组织，PPT 由讲稿决定，生成工单后逐页出片。 |
 
 ## 结构
 
