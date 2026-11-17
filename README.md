@@ -9,10 +9,12 @@
 | Skill | 用途 |
 | --- | --- |
 | [kongkong99-ppt-production-workflow](skills/kongkong99-ppt-production-workflow/SKILL.md) | 按模板与演讲目标协同设计讲稿、Excel 工单和 PPTX。 |
-| [short-video-packaging](skills/short-video-packaging/SKILL.md) | 剪辑口播并制作字幕、画面、界面演示和音效包装。 |
+| [short-video-packaging](skills/short-video-packaging/SKILL.md) · v1.1 | 视频包装通用主干：剪辑口播并制作字幕、画面、界面演示和音效包装。 |
 | [workbuddy-demo-animation](skills/workbuddy-demo-animation/SKILL.md) | 制作可编辑的 WorkBuddy 模拟教程画面、提示词动画与演示视频。 |
 
 安装、依赖和使用示例见 [公开版使用说明](PUBLIC_SKILLS.md)。
+
+视频技能采用[共享主干＋个人配置](VIDEO_SKILLS.md)：通用修复改一处，个人版自动组合生成。
 
 ## 原有技能
 
@@ -21,7 +23,7 @@
 | [product-benchmark-tasks](skills/product-benchmark-tasks/SKILL.md) | 分析对标产品，把观察结果转成可验证的执行任务。 |
 | [attention-driven-storyboard](skills/attention-driven-storyboard/SKILL.md) | 围绕观众注意力和内容推进，策划知识短视频及其分镜。 |
 | [knowledge-video-storyboard](skills/knowledge-video-storyboard/SKILL.md) | 把已剪辑口播或逐字稿转换成知识分享视频分镜。 |
-| [interface-explainer-motion](skills/interface-explainer-motion/SKILL.md) | 将口播转为同步的界面演示、动画图解和可编辑视频。 |
+| [interface-explainer-motion](skills/interface-explainer-motion/SKILL.md) · 个人版 v1.1 | 将口播转为同步的界面演示、动画图解和可编辑视频；含个人固定剪辑规则、背景与音效。 |
 | [workbuddy-simulator](skills/workbuddy-simulator/SKILL.md) | 生成可编辑的 WorkBuddy 模拟界面、Prompt 卡片与图片揭晓动画。 |
 | [chat-screenshot-demo](skills/chat-screenshot-demo/SKILL.md) | 生成微信风格长屏聊天案例与滚动视频，含 10 个整头像打码模板。 |
 | [x-article-layout](skills/x-article-layout/SKILL.md) | 将长文整理为分节图文排版，标注加粗、生成配图提示词并插入 AI 配图。 |
